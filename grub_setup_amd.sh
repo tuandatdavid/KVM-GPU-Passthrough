@@ -11,7 +11,7 @@ GRUB=`cat /etc/default/grub | grep "GRUB_CMDLINE_LINUX_DEFAULT" | rev | cut -c 2
 GRUB+=" amd_iommu=on iommu=pt video=efifb:off\""
 sed -i -e "s|^GRUB_CMDLINE_LINUX_DEFAULT.*|${GRUB}|" /etc/default/grub
 
-grub-mkconfig -o /boot/grub/grub.cfg     
+grub2-mkconfig -o /boot/grub/grub.cfg     
 sleep 5s
 clear            
 echo
